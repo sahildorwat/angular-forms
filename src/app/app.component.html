@@ -51,6 +51,7 @@
             rows=3
             name="textA"
             [(ngModel)]="answer"
+            name="answer"
               >
           </textarea>
           <div>Your answer: {{answer}}</div>
@@ -72,6 +73,15 @@
           [disabled]="!f.valid"
           >Submit</button>
       </form>
+
+      <div class="jumbotron" *ngIf="submitted">
+        <p>Name : {{user.username}}</p>
+        <p>email : {{user.email}}</p>
+        <p>gender : {{user.gender}}</p>
+        <p>secre question : Your first {{user.secretQ}}</p>
+        <p>Answer : {{user.answer}}</p>
+      </div>
+
     </div>
   </div>
 </div>

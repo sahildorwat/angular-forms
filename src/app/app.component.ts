@@ -11,6 +11,14 @@ export class AppComponent {
   defaultQuestion = 'teacher';
   answer = '';
   genders = ['male', 'female'];
+  user = {
+    username: '',
+    email: '',
+    secretQ: '',
+    answer: '',
+    gender: ''
+  };
+  submitted = false;
 
   suggestUserName() {
     console.log('in suggst');
@@ -19,7 +27,12 @@ export class AppComponent {
   }
 
   onSubmit() {
-    console.log(this.form);
+    this.submitted = true;
+    this.user.username = this.form.value.username;
+    this.user.email = this.form.value.email;
+    this.user.secretQ = this.form.value.secret;
+    this.user.answer = this.form.value.answer;
+    this.user.gender = this.form.value.gender;
   }
 
 }
