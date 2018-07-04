@@ -11,8 +11,11 @@ export class AppComponent {
   defaultQuestion = 'teacher';
   answer = '';
   genders = ['male', 'female'];
+
   suggestUserName() {
+    console.log('in suggst');
     const suggestedName = 'Superuser';
+    this.form.form.patchValue({ username: 'sahil'});
   }
 
   onSubmit() {
